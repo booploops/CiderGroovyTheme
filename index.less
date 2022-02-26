@@ -1,0 +1,39 @@
+// Theme
+
+#app.twopanel {
+    .app-chrome.chrome-bottom {
+    
+
+        .playback-button.play,.playback-button.pause {
+            width: 42px;
+            height: 42px;
+            background-color: rgb(200 200 200 / 20%);
+            border-radius: 50%;
+            margin: 6px;
+        }
+        .app-chrome--left {
+            order: 2;
+            padding-left:0px;
+            width: 100%;
+            justify-content: center;
+        }
+        .app-chrome--center {
+            order: 1;
+            width: 30%;
+            justify-content: flex-start;
+            align-items: flex-start;
+            .playback-controls {
+                width:100%;
+                height: 100%;
+                max-width: 100%;
+                border:0px;
+            }
+            flex: 0 0 auto;
+        }
+        .app-chrome--right{ 
+            order: 3;
+            width: 30%;
+            flex: 0 0 auto;
+        }
+    }
+}
