@@ -1,7 +1,13 @@
 #app.twopanel {
-    font-family: "Segoe UI Variable Display", system-ui;
+    font-family    : "Segoe UI Variable Display", system-ui;
+    --chromeHeight1: 42px;
+    --chromeHeight2: 70px;
+    --chromeHeight : calc(var(--chromeHeight1) + var(--chromeHeight2));
 
     .app-chrome.chrome-bottom {
+        .app-playback-controls .actions {
+            align-self: center;
+        }
 
         .playback-button.play,
         .playback-button.pause {
@@ -27,6 +33,28 @@
             align-items    : flex-start;
 
             .playback-controls {
+                .playback-info {
+                    align-items: flex-start;
+
+                    .song-name {
+                        text-align: left;
+                    }
+
+                    .song-artist-album-content {
+                        text-align: left;
+                    }
+
+                    .song-progress {
+                        bottom: 3px;
+                    }
+                }
+
+                .artwork {
+                    width : 64px;
+                    height: 64px;
+                }
+
+
                 width    : 100%;
                 height   : 100%;
                 max-width: 100%;
