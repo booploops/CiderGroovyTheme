@@ -1,39 +1,55 @@
-// Theme
-
 #app.twopanel {
-    .app-chrome.chrome-bottom {
-    
+    font-family: "Segoe UI Variable Display", system-ui;
 
-        .playback-button.play,.playback-button.pause {
-            width: 42px;
-            height: 42px;
+    .app-chrome.chrome-bottom {
+
+        .playback-button.play,
+        .playback-button.pause {
+            width           : 42px;
+            height          : 42px;
             background-color: rgb(200 200 200 / 20%);
-            border-radius: 50%;
-            margin: 6px;
+            border-radius   : 50%;
+            margin          : 6px;
         }
+
         .app-chrome--left {
-            order: 2;
-            padding-left:0px;
-            width: 100%;
+            order          : 2;
+            padding-left   : 0px;
+            width          : 100%;
             justify-content: center;
         }
+
         .app-chrome--center {
-            order: 1;
-            width: 30%;
+            order          : 1;
+            width          : 30%;
             justify-content: flex-start;
-            align-items: flex-start;
+            align-items    : flex-start;
+
             .playback-controls {
-                width:100%;
-                height: 100%;
+                width    : 100%;
+                height   : 100%;
                 max-width: 100%;
-                border:0px;
+                border   : 0px;
             }
+
             flex: 0 0 auto;
         }
-        .app-chrome--right{ 
+
+        .app-chrome--right {
             order: 3;
             width: 30%;
-            flex: 0 0 auto;
+            flex : 0 0 auto;
         }
     }
+}
+
+.wpfade_transform-enter-active,
+.wpfade_transform-leave-active {
+    transition: opacity .22s var(--appleEase), transform .22s var(--appleEase);
+}
+
+.wpfade_transform-enter,
+.wpfade_transform-leave-to {
+    opacity  : 0;
+    transform: scale(0.9);
 }
