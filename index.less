@@ -3,15 +3,6 @@
 
 #app.twopanel {
     font-family    : "Segoe UI Variable Display", system-ui;
-    --chromeHeight1: 42px;
-    --chromeHeight2: 70px;
-    --chromeHeight : calc(var(--chromeHeight1) + var(--chromeHeight2));
-
-    .app-chrome {
-        .app-mainmenu {
-            margin-left: 10px;
-        }
-    }
 
     .menu-panel {
         .menu-panel-body {
@@ -55,99 +46,8 @@
     .sidebar-icon {
         margin-top: 1px;
     }
-
-    .app-chrome.chrome-bottom {
-        .app-playback-controls .actions {
-            align-self: center;
-        }
-
-        .playback-button.play,
-        .playback-button.pause {
-            width           : 42px;
-            height          : 42px;
-            background-color: rgb(200 200 200 / 20%);
-            border-radius   : 50%;
-            margin          : 6px;
-            box-shadow      : 0px 0px 0px 2px var(--keyColor);
-        }
-
-        .app-chrome--left {
-            order          : 2;
-            padding-left   : 0px;
-            width          : 100%;
-            justify-content: center;
-        }
-
-        .app-chrome--center {
-            order          : 1;
-            width          : 30%;
-            justify-content: flex-start;
-            align-items    : flex-start;
-
-            .playback-controls {
-                .artwork {
-                    width     : var(--chromeHeight2);
-                    height    : var(--chromeHeight2);
-                    margin    : 0px 6px 0px 0px;
-                    box-shadow: unset;
-                    border    : 0px;
-
-                    .mediaitem-artwork,
-                    img {
-                        border-radius: 0px;
-                        box-shadow   : unset;
-                        border       : 0px;
-                    }
-                }
-
-                .playback-info {
-                    align-items: flex-start;
-
-                    .song-name {
-                        text-align        : left;
-                        font-size         : 15px;
-                        font-weight       : initial;
-                        line-height       : 0.8em;
-                        width             : 100%;
-                        -webkit-mask-image: linear-gradient(-90deg, transparent 0%, transparent 10%, black 20%);
-                    }
-
-                    .song-artist-album {
-                        width             : 100%;
-                        -webkit-mask-image: linear-gradient(-90deg, transparent 0%, transparent 10%, black 20%);
-                    }
-
-                    .audio-type {
-                        margin: 0px;
-                    }
-
-                    .song-artist-album-content {
-                        text-align: left;
-                        font-size : 12px;
-                    }
-
-                    .song-progress {
-                        bottom: 3px;
-                    }
-                }
-
-
-                width    : 100%;
-                height   : 100%;
-                max-width: 100%;
-                border   : 0px;
-            }
-
-            flex: 0 0 auto;
-        }
-
-        .app-chrome--right {
-            order: 3;
-            width: 30%;
-            flex : 0 0 auto;
-        }
-    }
 }
+
 
 // .wpfade_transform-enter-active,
 // .wpfade_transform-leave-active {
