@@ -7,6 +7,9 @@
   "directives": {
     "windowLayout": {
       "value": "twopanel"
+    },
+    "lcdArtworkSize": {
+      "value": 70
     }
   }
 }
