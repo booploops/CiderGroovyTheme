@@ -360,27 +360,98 @@ body {
         .nav-item {
             -webkit-app-region: no-drag;
             filter            : unset;
-            background        : rgb(100 100 100 / 25%);
             height            : 32px;
             width             : 40px;
-            border-radius     : 6px;
-            border            : 1px solid rgba(100, 100, 100, 0.35);
-            border-top        : 1px solid rgba(100, 100, 100, 0.5);
+            border-radius     : 0px;
+            border            : 0px solid rgba(100, 100, 100, 0.35);
             margin            : 0px;
 
+            >svg {
+                display: none;
+            }
+
+            background       : rgb(200 200 200 / 75%);
+            transform        : scale(1) translateZ(-1px);
+            transition       : unset;
+            -webkit-mask-size: 50%;
+
             &:first-child {
-                margin-left               : 6px;
-                border-top-right-radius   : 0px;
-                border-bottom-right-radius: 0px;
+                margin-left           : 6px;
+                -webkit-mask-image    : url("icons/arrow-left.svg");
+                -webkit-mask-position : center;
+                -webkit-mask-repeat   : no-repeat;
+                animation-name        : arrowLeftPressOut;
+                animation-duration    : 0.5s;
+                animation-repeat-count: 1;
+                animation-fill-mode   : forwards;
+
+                &:active {
+                    animation-name: arrowLeftPressIn;
+                }
+
+                @keyframes arrowLeftPressIn {
+                    0% {
+                        -webkit-mask-position: center;
+                    }
+
+                    100% {
+                        -webkit-mask-position: 40% center;
+                    }
+                }
+
+                @keyframes arrowLeftPressOut {
+                    0% {
+                        -webkit-mask-position: 40% center;
+                    }
+
+                    100% {
+                        -webkit-mask-position: center;
+                    }
+                }
             }
 
             &:nth-child(2) {
-                border-top-left-radius   : 0px;
-                border-bottom-left-radius: 0px;
+                -webkit-mask-image    : url("icons/arrow-right.svg");
+                -webkit-mask-position : center;
+                -webkit-mask-repeat   : no-repeat;
+                animation-name        : arrowRightPressOut;
+                animation-duration    : 0.5s;
+                animation-repeat-count: 1;
+                animation-fill-mode   : forwards;
+
+                &:active {
+                    animation-name: arrowRightPressIn;
+                }
+
+                @keyframes arrowRightPressIn {
+                    0% {
+                        -webkit-mask-position: center;
+                    }
+
+                    100% {
+                        -webkit-mask-position: 60% center;
+                    }
+                }
+
+                @keyframes arrowRightPressOut {
+                    0% {
+                        -webkit-mask-position: 60% center;
+                    }
+
+                    100% {
+                        -webkit-mask-position: center;
+                    }
+                }
+            }
+
+            &:active {
+                background       : rgb(200 200 200 / 100%);
+                -webkit-mask-size: 45%;
+                transform        : scale(1) translateZ(-1px);
             }
 
             &:hover {
-                background-color: rgb(60 60 60 / 40%);
+                background-color: rgb(200 200 200 / 100%);
             }
         }
 

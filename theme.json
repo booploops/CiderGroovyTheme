@@ -1,15 +1,15 @@
 {
-  "name": "Groovy",
-  "description": "Inspired by Groove Music and Media Player found on Windows",
-  "version": "1.0.0",
-  "author": "booploops",
-  "github_repo": "booploops/CiderGroovyTheme",
-  "directives": {
-    "windowLayout": {
-      "value": "twopanel"
-    },
-    "lcdArtworkSize": {
-      "value": 80
+    "name": "Groovy",
+    "description": "Inspired by Groove Music and Media Player found on Windows",
+    "version": "1.1.0",
+    "author": "booploops",
+    "github_repo": "booploops/CiderGroovyTheme",
+    "directives": {
+        "windowLayout": {
+            "value": "twopanel"
+        },
+        "lcdArtworkSize": {
+            "value": 80
+        }
     }
-  }
 }
