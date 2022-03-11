@@ -40,7 +40,7 @@ body {
         transition: transform .1s var(--appleEase);
 
         &:hover {
-            transform : scale(1.1);
+            transform: scale(1.1);
         }
     }
 
@@ -72,11 +72,12 @@ body {
     }
 
     .app-drawer {
-        top: 6%;
+        top   : 6%;
         height: 92%;
     }
 
     .modular-fs {
+
         // #app-sidebar {
         //     background: transparent;
         // }
@@ -92,7 +93,7 @@ body {
         //     }
         // }
         .app-drawer {
-            top: 6%;
+            top   : 6%;
             height: 94%;
         }
     }
@@ -142,20 +143,20 @@ body {
             .app-sidebar-item {
                 width     : 96%;
                 align-self: center;
-                border:0px;
-                position: relative;
+                border    : 0px;
+                position  : relative;
 
                 &:after {
-                    content: '';
-                    width: 0px;
-                    height: 16px;
-                    display: block;
-                    position: absolute;
-                    top: calc(100% - 72%);
+                    content      : '';
+                    width        : 0px;
+                    height       : 16px;
+                    display      : block;
+                    position     : absolute;
+                    top          : calc(100% - 72%);
                     border-radius: 10px;
-                    left: 0px;
-                    background: var(--keyColor);
-                    transition: width .1s var(--appleEase);
+                    left         : 0px;
+                    background   : var(--keyColor);
+                    transition   : width .1s var(--appleEase);
                 }
 
                 &.active:after {
@@ -251,18 +252,26 @@ body {
         }
 
         &:before {
-            content           : "";
-            background        : rgb(0 0 0 / 0%);
+            content              : "";
+            background           : rgb(0 0 0 / 50%);
             // width: 100%
-            height            : var(--navigationBarHeight);
-            position          : fixed;
-            top               : 0;
-            right             : 0px;
-            left              : 261px;
-            z-index           : 2;
-            backdrop-filter   : blur(16px) saturate(100%);
-            border-bottom: 1px solid rgb(0 0 0 / 20%);
+            height               : var(--navigationBarHeight);
+            position             : fixed;
+            top                  : 0;
+            right                : 0px;
+            left                 : 261px;
+            z-index              : 2;
+            backdrop-filter      : blur(16px) saturate(100%);
+            border-bottom        : 1px solid rgb(0 0 0 / 20%);
+            transition           : background .3s var(--appleEase), border-bottom .3s var(--appleEase);
             // -webkit-mask-image: linear-gradient(to top, transparent 0%, black 50%, black);
+        }
+
+        &[scrollpos~="0"] {
+            &::before {
+                background   : rgb(0 0 0 / 0%);
+                border-bottom: 1px solid rgb(0 0 0 / 0%);
+            }
         }
     }
 
@@ -350,21 +359,22 @@ body {
         .nav-item {
             -webkit-app-region: no-drag;
             filter            : unset;
-            background: rgb(100 100 100 / 25%);
+            background        : rgb(100 100 100 / 25%);
             height            : 32px;
             width             : 40px;
-            border-radius: 6px;
-            border: 1px solid rgba(100, 100, 100, 0.35);
-            border-top: 1px solid rgba(100, 100, 100, 0.5);
-            margin:0px;
+            border-radius     : 6px;
+            border            : 1px solid rgba(100, 100, 100, 0.35);
+            border-top        : 1px solid rgba(100, 100, 100, 0.5);
+            margin            : 0px;
 
             &:first-child {
-                margin-left: 6px;
-                border-top-right-radius: 0px;
+                margin-left               : 6px;
+                border-top-right-radius   : 0px;
                 border-bottom-right-radius: 0px;
             }
+
             &:nth-child(2) {
-                border-top-left-radius: 0px;
+                border-top-left-radius   : 0px;
                 border-bottom-left-radius: 0px;
             }
 
@@ -387,7 +397,7 @@ body {
         &:not(.mediaitem-video):not(.mediaitem-brick) {
             .artwork-container {
                 .artwork {
-                    width: 180px;
+                    width : 180px;
                     height: 180px;
                 }
             }
