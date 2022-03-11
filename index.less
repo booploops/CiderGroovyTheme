@@ -106,7 +106,7 @@ body {
     }
 
     .window-controls {
-        height  : 42px;
+        height  : 32px;
         position: absolute;
         right   : 0px;
         top     : 0px;
@@ -261,7 +261,8 @@ body {
             left              : 261px;
             z-index           : 2;
             backdrop-filter   : blur(16px) saturate(100%);
-            -webkit-mask-image: linear-gradient(to top, transparent 0%, black 50%, black);
+            border-bottom: 1px solid rgb(0 0 0 / 20%);
+            // -webkit-mask-image: linear-gradient(to top, transparent 0%, black 50%, black);
         }
     }
 
@@ -349,11 +350,23 @@ body {
         .nav-item {
             -webkit-app-region: no-drag;
             filter            : unset;
-            background-color  : rgb(30 30 30 / 40%);
-            height            : 36px;
+            background: rgb(100 100 100 / 25%);
+            height            : 32px;
             width             : 40px;
-            border-radius     : 10px;
-            border            : 1px solid rgb(200 200 200 / 10%);
+            border-radius: 6px;
+            border: 1px solid rgba(100, 100, 100, 0.35);
+            border-top: 1px solid rgba(100, 100, 100, 0.5);
+            margin:0px;
+
+            &:first-child {
+                margin-left: 6px;
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+            }
+            &:nth-child(2) {
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+            }
 
             &:hover {
                 background-color: rgb(60 60 60 / 40%);
