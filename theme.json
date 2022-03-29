@@ -10,6 +10,9 @@
         },
         "lcdArtworkSize": {
             "value": 100
+        },
+        "appNavigation": {
+            "value": "seperate"
         }
     }
 }
