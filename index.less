@@ -28,6 +28,10 @@ body {
         background-color: var(--color1);
     }
 
+    .content-inner {
+        top:0;
+        height:100%;
+    }
 
     --chromeHeight2      : 90px;
     --navigationBarHeight: 50px;
@@ -69,9 +73,18 @@ body {
         font-size: 2em;
         margin   : 0px;
     }
+
+    .artist-page .artist-body {
+        margin: 20px;
+    }
+
+    .artworkMaterial {
+        -webkit-mask-image: linear-gradient(0deg, white 50%, transparent);
+    }
     
     .playlist-page .playlist-body {
-        margin-top: -135px;
+        // margin-top: 600px;
+        margin-top:0px;
     }
 
     .md-btn:not(.md-btn-small) {
@@ -123,6 +136,8 @@ body {
     #app-sidebar {
         background : transparent;
         padding-top: var(--chromeHeight1Real);
+        border-right  : 1px solid rgb(10 10 10 / 20%);
+
 
         .app-sidebar-header {
             .search-input {
@@ -222,37 +237,10 @@ body {
         position     : relative;
         border-radius: 0px;
         border-top   : 0px;
-        border-left  : 1px solid rgb(10 10 10 / 20%);
+        border-left  : 0px solid rgb(10 10 10 / 20%);
+        height: calc(100% - var(--chromeHeight1Real));
+        margin-top: var(--chromeHeight1Real);
 
-        &::-webkit-scrollbar {
-            width : 16px;
-            height: 24px;
-        }
-
-        &::-webkit-scrollbar-button {
-            display: none;
-        }
-
-        &::-webkit-scrollbar-track-piece {
-            background: transparent;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background   : transparent;
-            border       : 6px solid transparent;
-            border-top   : var(--chromeHeight1Real) solid transparent;
-            box-shadow   : inset 0px 0px 10px 10px rgb(200 200 200 / 20%);
-            border-radius: 0px;
-            min-height   : 64px;
-            transition   : border 1s;
-        }
-
-        &::-webkit-scrollbar-thumb:hover {
-            border    : 3px solid transparent;
-            box-shadow: inset 0px 0px 10px 10px rgb(200 200 200 / 80%);
-            border-top: var(--chromeHeight1Real) solid transparent;
-            transition: border 1s;
-        }
 
         &:before {
             content              : "";
@@ -272,7 +260,7 @@ body {
 
         &[scrollpos~="0"] {
             &::before {
-                background     : rgb(0 0 0 / 0%);
+                background     : var(--color1);
                 border-bottom  : 1px solid rgb(0 0 0 / 0%);
                 backdrop-filter: blur(0px);
             }
@@ -409,8 +397,10 @@ body {
     }
 
     .floating-header {
-        left       : 5%;
+        left       : 260px;
         top        : 0px;
+        width: calc(100% - 260px);
+        position:fixed;
         padding-top: var(--navigationBarHeight);
     }
 
