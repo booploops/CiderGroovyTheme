@@ -74,6 +74,7 @@ body {
         font-size: 2em;
         margin   : 0px;
     }
+    
 
     .artist-page .artist-body {
         margin: 20px;
@@ -252,17 +253,15 @@ body {
         &:before {
             content              : "";
             background           : rgb(0 0 0 / 50%);
-            // width: 100%
             height               : var(--combBarHeight);
             position             : fixed;
             top                  : 0;
             right                : 0px;
-            left                 : 261px;
+            left                 : 260px;
             z-index              : 2;
             backdrop-filter      : blur(16px) saturate(100%);
             border-bottom        : 1px solid rgb(0 0 0 / 20%);
             transition           : background .3s var(--appleEase), border-bottom .3s var(--appleEase);
-            // -webkit-mask-image: linear-gradient(to top, transparent 0%, black 50%, black);
         }
 
         &[scrollpos~="0"] {
