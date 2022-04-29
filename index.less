@@ -472,12 +472,14 @@ body {
 
         @keyframes menuInUp {
             0% {
+                pointer-events: none;
                 opacity   : 0;
                 transform : translateY(-10px) translate3d(0,0,0);
                 background: @panelColorsFallback;
             }
     
             100% {
+                pointer-events: unset;
                 opacity   : 1;
                 transform : translateY(0);
                 background: @panelColors;
@@ -486,12 +488,14 @@ body {
     
         @keyframes menuInDown {
             0% {
+                pointer-events: none;
                 opacity   : 0;
                 transform : translateY(10px) translate3d(0,0,0);
                 background: @panelColorsFallback;
             }
     
             100% {
+                pointer-events: unset;
                 opacity   : 1;
                 transform : translateY(0);
                 background: @panelColors;
