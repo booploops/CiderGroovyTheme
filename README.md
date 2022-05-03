@@ -1,4 +1,6 @@
 # Groovy for [Cider](https://cider.sh/)
-![groovy](https://user-images.githubusercontent.com/49113086/158249623-126b78c5-fe52-46d3-b393-42d7662b778b.png)
+
+![image](https://user-images.githubusercontent.com/49113086/166414916-8a330fb9-f423-4286-8c87-9d5647607d03.png)
+
 
 Theme heavily inspired by Groove Music and Media Player found on Windows 10/11
