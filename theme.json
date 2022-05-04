@@ -14,5 +14,12 @@
         "appNavigation": {
             "value": "seperate"
         }
-    }
+    },
+    "pack": [
+        {
+            "name": "Extended Playback Bar",
+            "description": "Expands the width of the playback bar",
+            "file": "alternate_chrome.less"
+        }
+    ]
 }
