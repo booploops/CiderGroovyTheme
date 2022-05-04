@@ -11,15 +11,28 @@
 
 body {
     font-family: @fontA;
+    background : black !important;
+
+    #micaEffect {
+        opacity   : 0.5;
+        transition: opacity .20s linear;
+        filter    : saturate(260%) brightness(0.5);
+    }
+
+    &.stopanimation {
+        #micaEffect {
+            opacity: 0;
+        }
+    }
 }
 
 
 
 #app.twopanel {
-    @panelBrightness  : 1;
-    @panelTransparency: 80%;
-    --panelColor1     : lighten(mix(@msColor1, transparent, @panelTransparency), @panelBrightness);
-    --panelColor2     : lighten(mix(@msColor2, transparent, @panelTransparency), @panelBrightness);
+    @panelBrightness  : 0%;
+    @panelTransparency: 50%;
+    --panelColor1     : darken(mix(@msColor1, transparent, @panelTransparency), @panelBrightness);
+    --panelColor2     : darken(mix(@msColor2, transparent, @panelTransparency), @panelBrightness);
 
     --color1  : var(--panelColor2);
     --color2  : var(--panelColor1);
@@ -138,6 +151,7 @@ body {
 
     .app-chrome {
         font-family: @fontB;
+
         .app-chrome-item.volume {
             input {
                 background: #A5A8BA;
@@ -464,7 +478,7 @@ body {
             &.menu-panel-body-down {
                 animation: menuInDown .10s var(--appleEase);
             }
-    
+
             &.menu-panel-body-up {
                 animation: menuInUp .10s var(--appleEase);
             }
@@ -473,32 +487,32 @@ body {
         @keyframes menuInUp {
             0% {
                 pointer-events: none;
-                opacity   : 0;
-                transform : translateY(-10px) translate3d(0,0,0);
-                background: @panelColorsFallback;
+                opacity       : 0;
+                transform     : translateY(-10px) translate3d(0, 0, 0);
+                background    : @panelColorsFallback;
             }
-    
+
             100% {
                 pointer-events: unset;
-                opacity   : 1;
-                transform : translateY(0);
-                background: @panelColors;
+                opacity       : 1;
+                transform     : translateY(0);
+                background    : @panelColors;
             }
         }
-    
+
         @keyframes menuInDown {
             0% {
                 pointer-events: none;
-                opacity   : 0;
-                transform : translateY(10px) translate3d(0,0,0);
-                background: @panelColorsFallback;
+                opacity       : 0;
+                transform     : translateY(10px) translate3d(0, 0, 0);
+                background    : @panelColorsFallback;
             }
-    
+
             100% {
                 pointer-events: unset;
-                opacity   : 1;
-                transform : translateY(0);
-                background: @panelColors;
+                opacity       : 1;
+                transform     : translateY(0);
+                background    : @panelColors;
             }
         }
 
@@ -538,14 +552,14 @@ body {
             -webkit-mask-size: 50%;
 
             &:first-child {
-                margin-left           : 6px;
-                -webkit-mask-image    : url("icons/arrow-left.svg");
-                -webkit-mask-position : center;
-                -webkit-mask-repeat   : no-repeat;
-                animation-name        : arrowLeftPressOut;
-                animation-duration    : 0.5s;
-                animation-repeat-count: 1;
-                animation-fill-mode   : forwards;
+                margin-left              : 6px;
+                -webkit-mask-image       : url("icons/arrow-left.svg");
+                -webkit-mask-position    : center;
+                -webkit-mask-repeat      : no-repeat;
+                animation-name           : arrowLeftPressOut;
+                animation-duration       : 0.5s;
+                animation-repeat-count   : 1;
+                animation-fill-mode      : forwards;
                 animation-timing-function: linear;
 
                 &:active {
@@ -574,13 +588,13 @@ body {
             }
 
             &:nth-child(2) {
-                -webkit-mask-image    : url("icons/arrow-right.svg");
-                -webkit-mask-position : center;
-                -webkit-mask-repeat   : no-repeat;
-                animation-name        : arrowRightPressOut;
-                animation-duration    : 0.5s;
-                animation-repeat-count: 1;
-                animation-fill-mode   : forwards;
+                -webkit-mask-image       : url("icons/arrow-right.svg");
+                -webkit-mask-position    : center;
+                -webkit-mask-repeat      : no-repeat;
+                animation-name           : arrowRightPressOut;
+                animation-duration       : 0.5s;
+                animation-repeat-count   : 1;
+                animation-fill-mode      : forwards;
                 animation-timing-function: linear;
 
                 &:active {
@@ -692,9 +706,10 @@ body {
         .modal-window {
             background: @msColor3;
         }
+
         .modal-content {
             background-color: transparent;
-            box-shadow: unset;
+            box-shadow      : unset;
         }
 
         .modal-header {
@@ -705,42 +720,28 @@ body {
             font-size: 1.2em;
         }
 
-        .modal-search, .modal-lowercontent {
+        .modal-search,
+        .modal-lowercontent {
             background-color: @msColor1;
         }
     }
 
-    input[type=text], input[type=number] {
+    input[type=text],
+    input[type=number] {
         border-radius: 5px;
-        border-color: #3a3a3a;
-        background: #373737;
-        box-shadow: inset 0px -1px 0px #9f9f9f;
+        border-color : #3a3a3a;
+        background   : #373737;
+        box-shadow   : inset 0px -1px 0px #9f9f9f;
 
         &:hover {
             background: #3c3c3c;
         }
-        &:active, &:focus {
+
+        &:active,
+        &:focus {
             box-shadow: inset 0px -2px 0px var(--keyColor);
-            outline: none;
+            outline   : none;
             background: #222222;
         }
-    }
-}
-
-body {
-    #micaEffect {
-        opacity: 1;
-        transition: opacity .20s linear;
-    }
-}
-
-body.stopanimation {
-    #app {
-        // --color1: @msColor2!important;
-        // --color2: @msColor1!important;
-    }
-
-    #micaEffect {
-        opacity: 0;
     }
 }
