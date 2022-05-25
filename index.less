@@ -271,6 +271,27 @@ body {
         z-index         : 8;
         height          : var(--chromeHeight1Real);
         position        : absolute;
+
+        .app-chrome--right {
+            position     : relative;
+            top          : 0;
+            right        : 0;
+
+            .app-chrome-item.generic {
+                position: absolute;
+                top     : 0;
+                right   : 133px;
+                z-index : 1;
+
+                button.miniplayer {
+                    border-radius: 0px;
+                    &:hover {
+                        margin:0px;
+                        background-color: rgba(200, 200, 200, 0.1)!important;
+                    }
+                }
+            }
+        }
     }
 
 
@@ -326,7 +347,6 @@ body {
         }
 
         .app-chrome--center {
-            flex-direction: column-reverse;
 
             .playback-button.play,
             .playback-button.pause {
@@ -382,6 +402,33 @@ body {
                     }
                 }
 
+            }
+
+            input[type=range] {
+                height                  : 5px;
+                @shadowColor            : #3D2116;
+                --songProgressBackground: #A5A8BA;
+                box-shadow              : 0px 0px 0px 1px rgba(0 0 0 / 10%);
+
+                &::-webkit-slider-thumb {
+                    opacity           : 1;
+                    transform         : scale(1);
+                    -webkit-appearance: none;
+                    appearance        : none;
+                    width             : 20px;
+                    height            : 20px;
+                    border-radius     : 100%;
+                    background        : #434444;
+                    background-image  : radial-gradient(var(--keyColor) 4px, transparent 5px, transparent 10px);
+                    cursor            : default;
+                    transition        : opacity .10s var(--appleEase), transform .10s var(--appleEase);
+                    box-shadow        : inset 0px 0px 0px 1px rgba(255, 255, 255, 0.4);
+
+                    &:hover {
+                        opacity         : 1;
+                        background-image: radial-gradient(var(--keyColor) 5px, transparent 6px, transparent 10px);
+                    }
+                }
             }
 
             .app-chrome-playback-duration .song-progress {
@@ -634,52 +681,6 @@ body {
         }
 
 
-    }
-
-    .cd-mediaitem-square:not(.mediaitem-card) {
-        transition      : transform .2s var(--appleEase);
-        transition-delay: .1s;
-        padding         : 6px;
-
-        // background-color: red;
-        height: 250px;
-
-        &:not(.mediaitem-video):not(.mediaitem-brick) {
-            .artwork-container {
-                .artwork {
-                    width : 180px;
-                    height: 180px;
-                }
-            }
-        }
-
-
-        .info-rect {}
-
-        .artwork-container,
-        .info-rect {
-            transition      : transform .22s var(--appleEase);
-            transition-delay: .05s;
-        }
-
-        &:hover {
-            .artwork-container {
-                transform       : scale(1.1);
-                transition      : transform .1s var(--appleEase);
-                transition-delay: 0s;
-                transform-origin: center;
-            }
-
-
-            .info-rect {
-                z-index         : 1;
-                transition      : transform .1s var(--appleEase);
-                transition-delay: 0s;
-                transform       : translateY(8px) translate3d(0, 0, 0);
-            }
-        }
-
-        &:active {}
     }
 
     &.simplebg {
