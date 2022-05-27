@@ -180,13 +180,6 @@ body {
         }
     }
 
-    .window-controls {
-        height  : 32px;
-        position: absolute;
-        right   : 0px;
-        top     : 0px;
-    }
-
     #app-sidebar {
         background  : var(--color2);
         padding-top : var(--chromeHeight1Real);
@@ -290,39 +283,6 @@ body {
                         background-color: rgba(200, 200, 200, 0.1)!important;
                     }
                 }
-            }
-        }
-    }
-
-
-    #app-content {
-        position     : relative;
-        border-radius: 0px;
-        border-top   : 0px;
-        border-left  : 0px solid rgb(10 10 10 / 20%);
-        height       : calc(100% - var(--chromeHeight1Real));
-        margin-top   : var(--chromeHeight1Real);
-
-
-        &:before {
-            content        : "";
-            background     : rgb(0 0 0 / 50%);
-            height         : var(--combBarHeight);
-            position       : fixed;
-            top            : 0;
-            right          : 0px;
-            left           : 260px;
-            z-index        : 2;
-            backdrop-filter: blur(16px) saturate(100%);
-            border-bottom  : 1px solid rgb(0 0 0 / 20%);
-            transition     : background .3s var(--appleEase), border-bottom .3s var(--appleEase);
-        }
-
-        &[scrollpos~="0"] {
-            &::before {
-                background     : var(--color1);
-                border-bottom  : 1px solid rgb(0 0 0 / 0%);
-                backdrop-filter: blur(0px);
             }
         }
     }
